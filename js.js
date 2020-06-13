@@ -70,7 +70,7 @@ function checkLogin(){
       {
         document.getElementById("loginDrop").style.backgroundColor = "red";        
         document.getElementById("loginError").style.display = "table-row";
-        document.getElementById("loginError").innerHTML = "<td colspan='2' id='errorTd' class='insideForm'>Usuario/Contraseña erróneos</td>";
+        document.getElementById("loginError").innerHTML = "<td colspan='2' id='errorTd' class='insideForm'>Usuario/Contrase&ntildea err&oacuteneos</td>";
         document.getElementById("errorTd").style.backgroundColor = "red";
         document.getElementById("errorTd").style.color = "white";
         //alert("Usuario/Contraseña erróneos");
@@ -99,7 +99,7 @@ function usuarioLogueado()
 {  
   document.getElementById("loginNavBar").innerText = datosUsuario[1];
   document.getElementById("navBarCitas").innerHTML = "<a href='citas.html'>Citas</a>";
-  document.getElementById("navBarLogout").innerHTML = "<a onClick='logout();'>Cerrar sesión</a>";
+  document.getElementById("navBarLogout").innerHTML = "<a onClick='logout();'>Cerrar sesi&oacuten</a>";
 }
 
 function logout(){
@@ -107,7 +107,7 @@ function logout(){
   sessionStorage.removeItem("UsuarioPeluqueria");
   document.getElementById("navBarCitas").innerHTML = "";
   document.getElementById("navBarLogout").innerHTML = "";
-  document.getElementById("loginNavBar").innerText = "Iniciar sesión";
+  document.getElementById("loginNavBar").innerText = "Iniciar sesi&oacuten";
   window.location.href = "index.html";
 }
 
@@ -202,9 +202,9 @@ function cargarTxtbModificar(posicion){
   //Contraseña
   if(posicion == 9)
   {
-    document.getElementById("lblConf"+posicion).innerHTML = "Contraseña actual <input type='password' id='txtbNewPassw1'><br>"; 
-    document.getElementById("lblConf"+posicion).innerHTML += "Nueva contraseña <input type='password' id='txtbNewPassw2'><br>"; 
-    document.getElementById("lblConf"+posicion).innerHTML += "Nueva contraseña <input type='password' id='txtbNewPassw3'>"; 
+    document.getElementById("lblConf"+posicion).innerHTML = "Contrase&ntildea actual <input type='password' id='txtbNewPassw1'><br>"; 
+    document.getElementById("lblConf"+posicion).innerHTML += "Nueva contrase&ntildea <input type='password' id='txtbNewPassw2'><br>"; 
+    document.getElementById("lblConf"+posicion).innerHTML += "Nueva contrase&ntildea <input type='password' id='txtbNewPassw3'>"; 
   }
   else
     document.getElementById("lblConf"+posicion).innerHTML = "<input type='text' id='txtbNew"+posicion+"' value="+datosUsuario[posicion]+">"
@@ -215,7 +215,7 @@ function comprobarMascaras(datoNuevo, posicion){
     //Si el dato no puede ser null
     if(datoNuevo == "" && !(posicion == 3 || posicion == 7 || posicion == 11 || posicion == 12))
     {
-      alert("El "+arrayNombresBBDD[posicion]+" no puede estar vacío");
+      alert("El "+arrayNombresBBDD[posicion]+" no puede estar vac&iacuteo");
       return false;
     }
     //Máscara DNI
@@ -245,7 +245,7 @@ function comprobarMascaras(datoNuevo, posicion){
       const mascara = /^\d{9}$/;;
       if(!mascara.test(datoNuevo))
       {
-        alert("Formato de teléfono incorrecto");
+        alert("Formato de tel&eacutefono incorrecto");
         return false;
       }
     }
@@ -255,7 +255,7 @@ function comprobarMascaras(datoNuevo, posicion){
       datoNuevo = datoNuevo.toUpperCase();
       if(datoNuevo != "M" && datoNuevo != "F")
       {
-        alert("Formato de género incorrecto");
+        alert("Formato de g&eacutenero incorrecto");
         return false;
       }
     } 
@@ -265,7 +265,7 @@ function comprobarMascaras(datoNuevo, posicion){
       const mascara = /^\d+$/;
       if(!mascara.test(datoNuevo))
       {
-        alert("Formato de número en la dirección incorrecto");
+        alert("Formato de n&uacutemero en la direcci&oacuten incorrecto");
         return false;
       }
     }
@@ -275,7 +275,7 @@ function comprobarMascaras(datoNuevo, posicion){
       const mascara = /^\d+$/;
       if(!mascara.test(datoNuevo))
       {
-        alert("Formato de Código Postal incorrecto");
+        alert("Formato de C&oacutedigo Postal incorrecto");
         return false;
       }
     }
@@ -299,13 +299,13 @@ function confModConfirm(posicion){
       if (this.readyState == 4 && this.status == 200) {
         if(!this.responseText) //Usuario o pass incorrectas
         {
-          alert("Contraseña incorrecta");
+          alert("Contrase&ntildea incorrecta");
         }
         else //Usuario y pass correcto
         {                  
           var passw = document.getElementById("txtbNewPassw2").value;
           if(passw != document.getElementById("txtbNewPassw3").value)
-            alert ("Las contraseñas no coinciden");
+            alert ("Las contrase&ntildeas no coinciden");
           else
             modificarPassw(passw, posicion);
         }
@@ -330,7 +330,7 @@ function modificarPassw(passw, posicion){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open("GET","/php/editar_passw.php?Id_Cliente="+datosUsuario[0]+"&Dato="+passw);
   xmlhttp.send();
-  alert("Contraseña cambiada con éxito");
+  alert("Contrase&ntildea cambiada con &eacutexito");
   document.getElementById("botonConf"+posicion).innerHTML = "<a onclick='cargarTxtbModificar("+posicion+");'><button class='botonConf'>Modificar</button></a>"; 
   refrescarSaveNavegador();
   window.location.href = "configuracion.html";
@@ -380,7 +380,7 @@ function confirmNewUser(){
   //Comprobar que ambas passw sean iguales
   if(document.getElementById("txtbNew9").value.localeCompare(document.getElementById("txtbNew17").value) != 0)
   {
-    alert("Las contraseñas no coinciden");
+    alert("Las contrase&ntildeas no coinciden");
     return;
   }
   
@@ -429,7 +429,7 @@ function insertarNuevoUsuario(arrayDatos){
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) 
     {
-      alert("Usuario creado con éxito");
+      alert("Usuario creado con &eacutexito");
       window.location.href = "index.html";
     }
   };  
@@ -680,7 +680,7 @@ function manejadorHorasCitas(arrayJson){
 
 
   if(horasDisponibles.length == 0)
-    alert("El empleado tiene el día completo. Por favor, cambie el día o el empleado");
+    alert("El empleado tiene el d&iacutea completo. Por favor, cambie el d&iacutea o el empleado");
   else
   {
     //Al tiempo, por cada 60 hay que sumarle 40
@@ -727,7 +727,7 @@ function buscarCitaCorrecto(){
   document.getElementById("listadoTratamientos").disabled = true;
   document.getElementById("listadoEmpleados").disabled = true;
   document.getElementById("calendario").disabled = true;
-  document.getElementById("spanBotonBuscarCita").innerHTML = "<a id='botonCancelarBusquedaCita' onclick='cancelarBusquedaCita()'><button class='botonConf'>Nueva búsqueda</button></a>";    
+  document.getElementById("spanBotonBuscarCita").innerHTML = "<a id='botonCancelarBusquedaCita' onclick='cancelarBusquedaCita()'><button class='botonConf'>Nueva b&uacutesqueda</button></a>";    
   document.getElementById("spanBotonConfirmarCita").innerHTML = "<a id='botonConfirmarCita' onclick='confirmarCita()'><button class='botonConf'>Confirmar nueva cita</button></a>";    
 }
 
