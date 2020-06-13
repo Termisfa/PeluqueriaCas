@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>C.A.S</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+
+    <body onload="cargaInicialCitas()">
+        <script type="text/javascript" src="js.js"></script>
+        
+        <div class = "navBar">         
+            <a href="index.html">Inicio</a>
+            <a href="index.html#precios">Precios</a>
+            <a href="index.html#mapa">Dónde estamos</a>   
+            <div id="navBarCitas"></div>
+            <div class = "navBarRight" id="navBarRight">
+                <a id="loginNavBar">Iniciar sesión</a>     
+                <div id="navBarLogout"></div>           
+            </div>                      
+        </div>
+       
+
+        <div class = "main">
+            <div class = "citasActuales">
+                <h1>Sus citas actuales: <br></h1>
+                <div class = "tablaCitas" id="citasActuales"></div>
+            </div><br><br>
+            
+            <table class = "tablePedirCita">
+                <tr>
+                    <th colspan="2">Pedir cita</th>
+                </tr>
+                <tr>
+                    <td>Empleado</td>
+                    <td><select class="listadoCitas" id="listadoEmpleados"></select></td>
+                </tr>
+                <tr>
+                    <td>Tratamiento</td>
+                    <td><select class="listadoCitas" id="listadoTratamientos"></select></td>
+                </tr>
+                <tr>
+                    <td>Fecha</td>
+                    <td><input class="listadoCitas" id="calendario" type = "date"></td>
+                </tr>
+                <tr>
+                    <th colspan="2"><span id="spanBotonBuscarCita"><button class="botonConf" id="botonBuscarCita" onclick="comprobarHorasCita()">Buscar cita</button></span></th>
+                </tr>  
+                <tr id="divHoras1">
+                    <td>Hora</td>
+                    <td><select class="listadoCitas" id="listadoHorasCitas"></select></td>
+                </tr>
+                <tr id="divHoras2">
+                    <th colspan="2"><span id="spanBotonConfirmarCita"></span></th>
+                </tr>
+            </table>       
+            
+            <div class="footer">
+                <div class="insideFooter">
+                    <span class="footerIzq">Teléfono: 722765820</span>
+                    <span class="footerDcha"><a href = "mailto: CASPeluqueria.ln@hotmail.com">CASPeluqueria.ln@hotmail.com</a></span>
+                </div>               
+            </div> 
+        </div>    
+    </body>
+</html>

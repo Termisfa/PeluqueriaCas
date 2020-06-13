@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>C.A.S</title>
+        <link rel="stylesheet" type="text/css" href="style.css">       
+    </head>
+
+
+    <body onload="cargaInicialNewUser()">
+        <script type="text/javascript" src="js.js"></script>
+        
+        <div class = "navBar">         
+            <a href="index.html">Inicio</a>
+            <a href="index.html#precios">Precios</a>
+            <a href="index.html#mapa">Dónde estamos</a>   
+            <div id="navBarCitas"></div>
+            <div class = "navBarRight" id="navBarRight">
+                <a id="loginNavBar">Iniciar sesión</a>     
+                <div id="navBarLogout"></div>           
+            </div>                      
+        </div>
+        <div class="loginDrop" id="loginDrop">
+            <table class="insideForm" id="tablaLogin">
+                <form class="insideForm" id="formLogin" onsubmit="checkLogin();return false" method="POST">
+                    <tr class="insideForm">
+                        <td class="insideForm"><label class="insideForm">Usuario:</label></td>
+                        <td class="insideForm"><input class="insideForm" type="text" id="user" required></td>
+                    </tr>
+                    <tr class="insideForm">
+                        <td class="insideForm"><label class="insideForm">Contraseña:</label></td>
+                        <td class="insideForm"><input class="insideForm" type="password" id="passw" required></td>
+                    </tr>   
+                    <tr class="insideForm" id = "loginError"></tr>             
+                    <tr class="insideForm">
+                        <td class="insideForm"><input class="botonInicio" type="submit" value="Iniciar Sesión"></td>
+                        <td class="insideForm"><button class="botonInicio" onclick="newUser();">Nuevo Usuario</button> </td>
+                    </tr>
+
+                </form>
+            
+            </table>
+        </div> 
+       
+
+        <div class = "main">
+            <table class = "tableConfig">
+                <tr>
+                    <th>Nombre</td>
+                    <td><input type = "text" id="txtbNew1"></input></td>
+                </tr>
+                <tr>
+                    <th>Apellido 1</td>
+                    <td><input type = "text" id="txtbNew2"></input></td>
+                </tr>
+                <tr>
+                    <th>Apellido 2</td>
+                    <td><input type = "text" id="txtbNew3"></input></td>
+                </tr>
+                <tr>
+                    <th>DNI/NIE</td>
+                    <td><input title="Ejemplos: 12345678P // X446975C" class="dni" type = "text" id="txtbNew4"></input></td>
+                </tr>
+                <tr>
+                    <th>Correo electrónico</td>
+                    <td><input title="Ejemplo: ejemplo@gmail.com" type = "text" id="txtbNew5"></input></td>
+                </tr>
+                <tr>
+                    <th>Teléfono</td>
+                    <td><input title="Ejemplo: 698765432" type = "text" id="txtbNew6"></input></td>
+                </tr>
+                <tr>
+                    <th>Género</td>
+                    <td><input title="Masculino: M // Femenino: F" type = "text" id="txtbNew7"></input></td>
+                </tr>
+                <tr>
+                    <th>Usuario</td>
+                    <td><input type = "text" id="txtbNew8"></input></td>
+                </tr>   
+                <tr>
+                    <th>Contraseña</td>
+                    <td><input type = "password" id="txtbNew9"></input></td>
+                </tr>    
+                <tr>
+                    <th>Confirmar contraseña</td>
+                    <td><input type = "password" id="txtbNew17"></input></td>
+                </tr> 
+                <tr>
+                    <th>Calle</td>
+                    <td><input type = "text" id="txtbNew10"></input></td>
+                </tr>          
+                <tr>
+                    <th>Número</td>
+                    <td><input title="Solo acepta números" type = "text" id="txtbNew11"></input></td>
+                </tr>   
+                <tr>
+                    <th>Letra</td>
+                    <td><input type = "text" id="txtbNew12"></input></td>
+                </tr>   
+                <tr>
+                    <th>Código postal</td>
+                    <td><input title="Ejemplo: 12345" type = "text" id="txtbNew13"></input></td>
+                </tr>   
+                <tr>
+                    <th>Ciudad</td>
+                    <td><input type = "text" id="txtbNew14"></input></td>
+                </tr>   
+                <tr>
+                    <th>Provincia</td>
+                    <td><input type = "text" id="txtbNew15"></input></td>
+                </tr>   
+                <tr>
+                    <th>País</td>
+                    <td><input type = "text" id="txtbNew16"></input></td>
+                </tr>  
+                <tr>
+                    <th><button class="botonConf" onClick="confirmNewUser();">Confirmar</button></td>
+                    <td><button class="botonConf" onClick="resetNewUser();">Reiniciar</button></td>
+                </tr> 
+            </table>
+
+            <div class="footer">
+                <div class="insideFooter">
+                    <span class="footerIzq">Teléfono: 722765820</span>
+                    <span class="footerDcha"><a href = "mailto: CASPeluqueria.ln@hotmail.com">CASPeluqueria.ln@hotmail.com</a></span>
+                </div>               
+            </div> 
+        </div>
+
+        
+
+
+    </body>
+</html>

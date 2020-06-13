@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>C.A.S</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+    </head>
+
+
+    <body onload="cargaInicial()">
+        <script type="text/javascript" src="js.js"></script>
+        
+        <div class = "navBar">         
+            <a href="index.html">Inicio</a>
+            <a href="#precios">Precios</a>
+            <a href="#mapa">Dónde estamos</a> 
+            <div id="navBarCitas"></div>
+            <div class = "navBarRight" id="navBarRight">
+                <a id="loginNavBar">Iniciar sesión</a>     
+                <div id="navBarLogout"></div>           
+            </div>                     
+        </div>
+        <div class="loginDrop" id="loginDrop">
+            <table class="insideForm" id="tablaLogin">
+                <form class="insideForm" id="formLogin" onsubmit="checkLogin();return false" method="POST">
+                    <tr class="insideForm">
+                        <td class="insideForm"><label class="insideForm">Usuario:</label></td>
+                        <td class="insideForm"><input class="insideForm" type="text" id="user" required></td>
+                    </tr>
+                    <tr class="insideForm">
+                        <td class="insideForm"><label class="insideForm">Contraseña:</label></td>
+                        <td class="insideForm"><input class="insideForm" type="password" id="passw" required></td>
+                    </tr>   
+                    <tr class="insideForm" id = "loginError"></tr>             
+                    <tr class="insideForm">
+                        <td class="insideForm"><input class="botonInicio" type="submit" value="Iniciar Sesión"></td>
+                        <td class="insideForm"><button class="botonInicio" onclick="newUser();">Nuevo Usuario</button> </td>
+                    </tr>
+                </form>            
+            </table>
+        </div> 
+
+        <div id="main" class = "main">
+            <div id="imgLogo" class = "imgLogo">
+                <img src="rsc/Logo.png">
+            </div>
+
+            <div class="slider">
+                <ul>
+                    <li>
+                        <img src="rsc/imgs/apaisado2.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="rsc/imgs/apaisado3.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="rsc/imgs/apaisado4.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="rsc/imgs/apaisado5.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="rsc/imgs/apaisado6.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="rsc/imgs/apaisado7.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class = "precios" id = "precios"></div>
+
+            <div class="slider2">
+                <ul>
+                    <li>
+                        <img src="rsc/imgs/salon1.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="rsc/imgs/salon2.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="rsc/imgs/salon3.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="rsc/imgs/salon4.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+
+            <div class= "divMapa" id = "mapa">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1sYLmQ8y12aaqOBrVcsHCi8qmoMrjyH3k" class = "mapa"></iframe>
+            </div>
+
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="insideFooter">
+                <span class="footerIzq">Teléfono: 722765820</span>
+                <span class="footerDcha"><a href = "mailto: CASPeluqueria.ln@hotmail.com">CASPeluqueria.ln@hotmail.com</a></span>
+            </div>               
+        </div> 
+        
+
+
+    </body>
+</html>
