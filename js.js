@@ -21,7 +21,7 @@ function cargarArrayNombresBBDD(){
   var xmlhttp = new XMLHttpRequest();
   arrayNombresBBDD = [];
 
-    xmlhttp.open("GET","http://"+ipActual+"/php/nombres_columna_clientes.php");
+    xmlhttp.open("GET","/php/nombres_columna_clientes.php");
     xmlhttp.send();
 
     xmlhttp.onreadystatechange = function() {
@@ -34,7 +34,7 @@ function cargarArrayNombresBBDD(){
 
 function precios(){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","http://"+ipActual+"/php/listar_precios.php");
+    xmlhttp.open("GET","/php/listar_precios.php");
     xmlhttp.send();
 
     xmlhttp.onreadystatechange = function() {
@@ -61,7 +61,7 @@ function checkLogin(){
   var xmlhttp = new XMLHttpRequest();
   var array = document.getElementById("formLogin");
     
-  xmlhttp.open("GET","http://"+ipActual+"/php/validar_clientes.php?Usuario=" + array.elements[0].value + "&Passw=" + array.elements[1].value);
+  xmlhttp.open("GET","/php/validar_clientes.php?Usuario=" + array.elements[0].value + "&Passw=" + array.elements[1].value);
   xmlhttp.send();
 
   xmlhttp.onreadystatechange = function() {
@@ -292,7 +292,7 @@ function confModConfirm(posicion){
   {
     var xmlhttp = new XMLHttpRequest();
 
-    xmlhttp.open("GET","http://"+ipActual+"/php/validar_clientes.php?Usuario=" + datosUsuario[8] + "&Passw=" + document.getElementById("txtbNewPassw1").value);
+    xmlhttp.open("GET","/php/validar_clientes.php?Usuario=" + datosUsuario[8] + "&Passw=" + document.getElementById("txtbNewPassw1").value);
     xmlhttp.send();
   
     xmlhttp.onreadystatechange = function() {
@@ -328,7 +328,7 @@ function confModConfirm(posicion){
 
 function modificarPassw(passw, posicion){
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET","http://"+ipActual+"/php/editar_passw.php?Id_Cliente="+datosUsuario[0]+"&Dato="+passw);
+  xmlhttp.open("GET","/php/editar_passw.php?Id_Cliente="+datosUsuario[0]+"&Dato="+passw);
   xmlhttp.send();
   alert("Contraseña cambiada con éxito");
   document.getElementById("botonConf"+posicion).innerHTML = "<a onclick='cargarTxtbModificar("+posicion+");'><button class='botonConf'>Modificar</button></a>"; 
@@ -338,7 +338,7 @@ function modificarPassw(passw, posicion){
 
 function checkExistingUser(datoNuevo, posicion){
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET","http://"+ipActual+"/php/comprobar_usuario.php?Usuario="+datoNuevo);
+  xmlhttp.open("GET","/php/comprobar_usuario.php?Usuario="+datoNuevo);
   xmlhttp.send();
   
   xmlhttp.onreadystatechange = function() {
@@ -356,7 +356,7 @@ function modificarDato(posicion, datoNuevo){
   if(posicion == 4)
     datoNuevo = corregirDNI(datoNuevo);
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET","http://"+ipActual+"/php/editar_cliente.php?Id_Cliente="+datosUsuario[0]+"&NombreColumna="+arrayNombresBBDD[posicion]+"&Dato="+datoNuevo);
+  xmlhttp.open("GET","/php/editar_cliente.php?Id_Cliente="+datosUsuario[0]+"&NombreColumna="+arrayNombresBBDD[posicion]+"&Dato="+datoNuevo);
   xmlhttp.send();
   datosUsuario[posicion] = datoNuevo;
   document.getElementById("botonConf"+posicion).innerHTML = "<a onclick='cargarTxtbModificar("+posicion+");'><button class='botonConf'>Modificar</button></a>"; 
@@ -396,7 +396,7 @@ function confirmNewUser(){
   
   arrayDatos[4] = corregirDNI(arrayDatos[4]);
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET","http://"+ipActual+"/php/comprobar_usuario.php?Usuario="+arrayDatos[8]);
+  xmlhttp.open("GET","/php/comprobar_usuario.php?Usuario="+arrayDatos[8]);
   xmlhttp.send();
   
   xmlhttp.onreadystatechange = function() {
@@ -423,7 +423,7 @@ function insertarNuevoUsuario(arrayDatos){
 
 
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET","http://"+ipActual+"/php/insertar_usuario.php?"+aux);
+  xmlhttp.open("GET","/php/insertar_usuario.php?"+aux);
   xmlhttp.send();
 
   xmlhttp.onreadystatechange = function() {
@@ -494,7 +494,7 @@ function cargarTablaTratamientos(){
   var xmlhttp = new XMLHttpRequest();
   tablaTratamientos = [];
 
-  xmlhttp.open("GET","http://"+ipActual+"/php/listar_tratamientos.php");
+  xmlhttp.open("GET","/php/listar_tratamientos.php");
   xmlhttp.send();
 
   xmlhttp.onreadystatechange = function() {    
@@ -526,7 +526,7 @@ function cargarListadoTratamientos(){
 function cargarListadoEmpleados(){
   var xmlhttp = new XMLHttpRequest();
 
-  xmlhttp.open("GET","http://"+ipActual+"/php/listar_empleados.php");
+  xmlhttp.open("GET","/php/listar_empleados.php");
   xmlhttp.send();
 
   xmlhttp.onreadystatechange = function() {    
@@ -538,7 +538,7 @@ function cargarListadoEmpleados(){
 
 function cargarCitasActuales(){
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET","http://"+ipActual+"/php/listar_citas.php?Usuario="+datosUsuario[0]);
+  xmlhttp.open("GET","/php/listar_citas.php?Usuario="+datosUsuario[0]);
   xmlhttp.send();
 
   xmlhttp.onreadystatechange = function() 
@@ -556,7 +556,7 @@ function citaBorrar(idCita){
 
 function citaBorrarConfirmado(idCita){
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET","http://"+ipActual+"/php/borrar_cita.php?idCita="+idCita);
+  xmlhttp.open("GET","/php/borrar_cita.php?idCita="+idCita);
   xmlhttp.send();
 
   xmlhttp.onreadystatechange = function() 
@@ -577,7 +577,7 @@ function comprobarHorasCita(){
   if(calendario.value != "" && calendario.value != null)
   {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","http://"+ipActual+"/php/listar_horas_citas.php?idTratamiento="+document.getElementById("listadoTratamientos").value+"&idEmpleado="+document.getElementById("listadoEmpleados").value+"&fecha="+calendario.value);
+    xmlhttp.open("GET","/php/listar_horas_citas.php?idTratamiento="+document.getElementById("listadoTratamientos").value+"&idEmpleado="+document.getElementById("listadoEmpleados").value+"&fecha="+calendario.value);
     xmlhttp.send();
 
     xmlhttp.onreadystatechange = function() 
@@ -742,7 +742,7 @@ function cancelarBusquedaCita(){
 
 function confirmarCita(){
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET","http://"+ipActual+"/php/insertar_cita.php?Empleado="+document.getElementById("listadoEmpleados").value+"&Cliente="+datosUsuario[0]+"&Tratamiento="+document.getElementById("listadoTratamientos").value+"&Fecha="+document.getElementById("calendario").value+"&Hora="+document.getElementById("listadoHorasCitas").value);
+  xmlhttp.open("GET","/php/insertar_cita.php?Empleado="+document.getElementById("listadoEmpleados").value+"&Cliente="+datosUsuario[0]+"&Tratamiento="+document.getElementById("listadoTratamientos").value+"&Fecha="+document.getElementById("calendario").value+"&Hora="+document.getElementById("listadoHorasCitas").value);
   xmlhttp.send();
 
   xmlhttp.onreadystatechange = function() 
