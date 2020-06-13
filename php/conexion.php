@@ -15,7 +15,7 @@ $conexion = new mysqli($hostname, $username, $password, $database);
 
 if($conexion -> connect_errno){//si no puede establecer la conexion
 
-	echo 'No se ha podido conectar con la Base de Datos';
+	echo ($conexion -> connect_errno);
 }
 
 ?>
