@@ -107,7 +107,7 @@ function logout(){
   sessionStorage.removeItem("UsuarioPeluqueria");
   document.getElementById("navBarCitas").innerHTML = "";
   document.getElementById("navBarLogout").innerHTML = "";
-  document.getElementById("loginNavBar").innerText = "Iniciar sesi&oacuten.hola";
+  document.getElementById("loginNavBar").innerText = "Iniciar sesi&oacuten";
   window.location.href = "index.html";
 }
 
