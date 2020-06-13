@@ -70,7 +70,7 @@ function checkLogin(){
       {
         document.getElementById("loginDrop").style.backgroundColor = "red";        
         document.getElementById("loginError").style.display = "table-row";
-        document.getElementById("loginError").innerHTML = "<td colspan='2' id='errorTd' class='insideForm'>Usuario/Contrase&ntildea err&oacuteneos</td>";
+        document.getElementById("loginError").innerHTML = "<td colspan='2' id='errorTd' class='insideForm'>Usuario/Contrase&ntildea err&oacute;neos</td>";
         document.getElementById("errorTd").style.backgroundColor = "red";
         document.getElementById("errorTd").style.color = "white";
         //alert("Usuario/Contraseña erróneos");
@@ -99,7 +99,7 @@ function usuarioLogueado()
 {  
   document.getElementById("loginNavBar").innerText = datosUsuario[1];
   document.getElementById("navBarCitas").innerHTML = "<a href='citas.html'>Citas</a>";
-  document.getElementById("navBarLogout").innerHTML = "<a onClick='logout();'>Cerrar sesi&oacuten</a>";
+  document.getElementById("navBarLogout").innerHTML = "<a onClick='logout();'>Cerrar sesi&oacute;n</a>";
 }
 
 function logout(){
@@ -107,7 +107,7 @@ function logout(){
   sessionStorage.removeItem("UsuarioPeluqueria");
   document.getElementById("navBarCitas").innerHTML = "";
   document.getElementById("navBarLogout").innerHTML = "";
-  document.getElementById("loginNavBar").innerText = "Iniciar sesi&oacuten";
+  document.getElementById("loginNavBar").innerText = "Iniciar sesi&oacute;n";
   window.location.href = "index.html";
 }
 
@@ -215,7 +215,7 @@ function comprobarMascaras(datoNuevo, posicion){
     //Si el dato no puede ser null
     if(datoNuevo == "" && !(posicion == 3 || posicion == 7 || posicion == 11 || posicion == 12))
     {
-      alert("El "+arrayNombresBBDD[posicion]+" no puede estar vac&iacuteo");
+      alert("El "+arrayNombresBBDD[posicion]+" no puede estar vac&iacute;o");
       return false;
     }
     //Máscara DNI
@@ -245,7 +245,7 @@ function comprobarMascaras(datoNuevo, posicion){
       const mascara = /^\d{9}$/;;
       if(!mascara.test(datoNuevo))
       {
-        alert("Formato de tel&eacutefono incorrecto");
+        alert("Formato de tel&eacute;fono incorrecto");
         return false;
       }
     }
@@ -255,7 +255,7 @@ function comprobarMascaras(datoNuevo, posicion){
       datoNuevo = datoNuevo.toUpperCase();
       if(datoNuevo != "M" && datoNuevo != "F")
       {
-        alert("Formato de g&eacutenero incorrecto");
+        alert("Formato de g&eacute;nero incorrecto");
         return false;
       }
     } 
@@ -265,7 +265,7 @@ function comprobarMascaras(datoNuevo, posicion){
       const mascara = /^\d+$/;
       if(!mascara.test(datoNuevo))
       {
-        alert("Formato de n&uacutemero en la direcci&oacuten incorrecto");
+        alert("Formato de n&uacute;mero en la direcci&oacute;n incorrecto");
         return false;
       }
     }
@@ -275,7 +275,7 @@ function comprobarMascaras(datoNuevo, posicion){
       const mascara = /^\d+$/;
       if(!mascara.test(datoNuevo))
       {
-        alert("Formato de C&oacutedigo Postal incorrecto");
+        alert("Formato de C&oacute;digo Postal incorrecto");
         return false;
       }
     }
@@ -330,7 +330,7 @@ function modificarPassw(passw, posicion){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open("GET","/php/editar_passw.php?Id_Cliente="+datosUsuario[0]+"&Dato="+passw);
   xmlhttp.send();
-  alert("Contrase&ntildea cambiada con &eacutexito");
+  alert("Contrase&ntildea cambiada con &eacute;xito");
   document.getElementById("botonConf"+posicion).innerHTML = "<a onclick='cargarTxtbModificar("+posicion+");'><button class='botonConf'>Modificar</button></a>"; 
   refrescarSaveNavegador();
   window.location.href = "configuracion.html";
@@ -429,7 +429,7 @@ function insertarNuevoUsuario(arrayDatos){
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) 
     {
-      alert("Usuario creado con &eacutexito");
+      alert("Usuario creado con &eacute;xito");
       window.location.href = "index.html";
     }
   };  
@@ -680,7 +680,7 @@ function manejadorHorasCitas(arrayJson){
 
 
   if(horasDisponibles.length == 0)
-    alert("El empleado tiene el d&iacutea completo. Por favor, cambie el d&iacutea o el empleado");
+    alert("El empleado tiene el d&iacute;a completo. Por favor, cambie el d&iacute;a o el empleado");
   else
   {
     //Al tiempo, por cada 60 hay que sumarle 40
@@ -727,7 +727,7 @@ function buscarCitaCorrecto(){
   document.getElementById("listadoTratamientos").disabled = true;
   document.getElementById("listadoEmpleados").disabled = true;
   document.getElementById("calendario").disabled = true;
-  document.getElementById("spanBotonBuscarCita").innerHTML = "<a id='botonCancelarBusquedaCita' onclick='cancelarBusquedaCita()'><button class='botonConf'>Nueva b&uacutesqueda</button></a>";    
+  document.getElementById("spanBotonBuscarCita").innerHTML = "<a id='botonCancelarBusquedaCita' onclick='cancelarBusquedaCita()'><button class='botonConf'>Nueva b&uacute;squeda</button></a>";    
   document.getElementById("spanBotonConfirmarCita").innerHTML = "<a id='botonConfirmarCita' onclick='confirmarCita()'><button class='botonConf'>Confirmar nueva cita</button></a>";    
 }
 
