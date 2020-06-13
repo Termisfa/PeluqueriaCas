@@ -13,7 +13,7 @@ function cargaInicial(){
 
 function conectar(){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET",ipActual+"/php/conexion.php");
+    xmlhttp.open("GET","/php/conexion.php");
     xmlhttp.send();
 }
 
