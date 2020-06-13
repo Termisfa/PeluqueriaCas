@@ -1,6 +1,6 @@
 var datosUsuario;
 var arrayNombresBBDD;
-var ipActual =  "192.168.1.62/WebPeluqueria";
+var ipActual =  "peluqueria2.azurewebsites.net";
 var tablaTratamientos;
 
 function cargaInicial(){  
