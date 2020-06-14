@@ -70,7 +70,7 @@ function checkLogin(){
       {
         document.getElementById("loginDrop").style.backgroundColor = "red";        
         document.getElementById("loginError").style.display = "table-row";
-        document.getElementById("loginError").innerHTML = "<td colspan='2' id='errorTd' class='insideForm'>Usuario/Contrase&ntildea err&oacute;neos</td>";
+        document.getElementById("loginError").innerHTML = "<td colspan='2' id='errorTd' class='insideForm'>Usuario/Contrase&ntilde;a err&oacute;neos</td>";
         document.getElementById("errorTd").style.backgroundColor = "red";
         document.getElementById("errorTd").style.color = "white";
         //alert("Usuario/Contraseña erróneos");
@@ -202,9 +202,9 @@ function cargarTxtbModificar(posicion){
   //Contraseña
   if(posicion == 9)
   {
-    document.getElementById("lblConf"+posicion).innerHTML = "Contrase&ntildea actual <input type='password' id='txtbNewPassw1'><br>"; 
-    document.getElementById("lblConf"+posicion).innerHTML += "Nueva contrase&ntildea <input type='password' id='txtbNewPassw2'><br>"; 
-    document.getElementById("lblConf"+posicion).innerHTML += "Nueva contrase&ntildea <input type='password' id='txtbNewPassw3'>"; 
+    document.getElementById("lblConf"+posicion).innerHTML = "Contrase&ntilde;a actual <input type='password' id='txtbNewPassw1'><br>"; 
+    document.getElementById("lblConf"+posicion).innerHTML += "Nueva contrase&ntilde;a <input type='password' id='txtbNewPassw2'><br>"; 
+    document.getElementById("lblConf"+posicion).innerHTML += "Nueva contrase&ntilde;a <input type='password' id='txtbNewPassw3'>"; 
   }
   else
     document.getElementById("lblConf"+posicion).innerHTML = "<input type='text' id='txtbNew"+posicion+"' value="+datosUsuario[posicion]+">"
@@ -299,13 +299,13 @@ function confModConfirm(posicion){
       if (this.readyState == 4 && this.status == 200) {
         if(!this.responseText) //Usuario o pass incorrectas
         {
-          alert("Contrase&ntildea incorrecta");
+          alert("Contrase&ntilde;a incorrecta");
         }
         else //Usuario y pass correcto
         {                  
           var passw = document.getElementById("txtbNewPassw2").value;
           if(passw != document.getElementById("txtbNewPassw3").value)
-            alert ("Las contrase&ntildeas no coinciden");
+            alert ("Las contrase&ntilde;as no coinciden");
           else
             modificarPassw(passw, posicion);
         }
@@ -330,7 +330,7 @@ function modificarPassw(passw, posicion){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open("GET","/php/editar_passw.php?Id_Cliente="+datosUsuario[0]+"&Dato="+passw);
   xmlhttp.send();
-  alert("Contrase&ntildea cambiada con &eacute;xito");
+  alert("Contrase&ntilde;a cambiada con &eacute;xito");
   document.getElementById("botonConf"+posicion).innerHTML = "<a onclick='cargarTxtbModificar("+posicion+");'><button class='botonConf'>Modificar</button></a>"; 
   refrescarSaveNavegador();
   window.location.href = "configuracion.html";
@@ -380,7 +380,7 @@ function confirmNewUser(){
   //Comprobar que ambas passw sean iguales
   if(document.getElementById("txtbNew9").value.localeCompare(document.getElementById("txtbNew17").value) != 0)
   {
-    alert("Las contrase&ntildeas no coinciden");
+    alert("Las contrase&ntilde;as no coinciden");
     return;
   }
   
