@@ -215,7 +215,7 @@ function comprobarMascaras(datoNuevo, posicion){
     //Si el dato no puede ser null
     if(datoNuevo == "" && !(posicion == 3 || posicion == 7 || posicion == 11 || posicion == 12))
     {
-      alert("El "+arrayNombresBBDD[posicion]+" no puede estar vac&iacute;o");
+      alert("El "+arrayNombresBBDD[posicion]+" no puede estar vacío");
       return false;
     }
     //Máscara DNI
